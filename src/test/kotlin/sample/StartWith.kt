@@ -6,7 +6,8 @@ object start {
 }
 
 class StartWith(private val value: String) {
-    infix fun with(prefix: String) {
+    infix fun with(prefix: String): AndString {
         assertTrue(value.startsWith(prefix))
+        return AndString(value)
     }
 }
